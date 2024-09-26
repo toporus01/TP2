@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Repuestos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Rodamientos Integral</h1>
+        <p>Gran variedad de respuestos para el automotor, contamos con variante de respuestos para el agro y diferentes modelos de acoplados.</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#catalogos">Catálogos</a></li>
+            <li><a href="#nuestra">Nuestra Historia</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#tabla">Tabla de Productos</a></li>
+            <li><a href="#formulario">Formulario de Contacto</a></li>
+            <li><a href="#testimonios">Reseñas</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="catalogos">
+            <h2 style="text-align: center;">Catálogos de Repuestos</h2>
+            <h4></h4>
+            <div class="flex-container">
+                <a href="autos.html" class="catalogo">
+                    <h3>Repuestos para Autos</h3>
+                    <img src="imagenes/autos1.jpg" alt="Catálogo de Repuestos para Autos" >
+                </a>
+                <a href="tractores.html" class="catalogo">
+                    <h3>Repuestos para Tractores</h3>
+                    <img src="imagenes/Repuestos-para-Komatsu-y-Cummins.png" alt="Catálogo de Repuestos para el Agro" >
+                </a>
+                <a href="acoplados.html" class="catalogo">
+                    <h3>Acoplados</h3>
+                    <img src="imagenes/acoplados1.jpg" alt="Catálogo de Acoplados">
+                </a>
+            </div>
+        </section>
+
+        <section id="nuestra" class="historia">
+            <h1>Nuestra Historia</h1>
+            <p>Somos un negocio de repuestos que lleva funcionando desde 1993,todo comenzo con una simple tienda de rulemanes y retenes. Con el tiempo, fueron agregando repuestos para el agro y gran catalogo de respuestos para el automotor. Hoy en el presente contamos con repuestos hidráulicos, acoplados, respuestos para el agro, respuestos para el automotor  y hacemos mangueras hidraulicas. Esto ya no es simplemente un negocio, ya es un lugar en donde todos son familia. Hoy en día, llevamos 32 años al servicio de nuestra gente, ofreciendo lo mejor en calidad y precio.</p>
+        </section>
+
+        <section class="historias-imagenes">
+            <div class="historia-item">
+                <h3>Como comenzo</h3>
+            <img src="imagenes/viejo.jpeg" alt="Imagen del pasado" >
+            </div>
+            <div class="historia-item">
+                <h3>Hoy en el presente</h3>
+            <img src="imagenes/nuevo.jpeg" alt="Imagen actual" >
+            </div>
+            
+        </section>
+
+        <section id="tabla">
+            <h2>Tabla de Productos más comprados</h2>
+            <input type="text" id="search" placeholder="Buscar producto..." oninput="filterTable()">
+            <button onclick="sortTable()">Ordenar por Precio</button>
+            <table id="productTable">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Descripción</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ruleman (SKF)</td>
+                        <td>Rulemán de alta calidad para autos.</td>
+                        <td>$5.000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Reten (DHL)</td>
+                        <td>Reten para tractores.</td>
+                        <td>$6.000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Repuesto Hidraulico</td>
+                        <td>Repuesto hidráulico para maquinaria agrícola.</td>
+                        <td>$6.500.00</td>
+                    </tr>
+                    <tr>
+                        <td>Bieleta Suspension</td>
+                        <td>Repuesto de suspension para autos.</td>
+                        <td>$15.000.00</td>
+                    </tr>
+                    <tr>
+                        <td>Pastillas de freno</td>
+                        <td>Pastillas de freno para el auto.</td>
+                        <td>$4.500.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="testimonios" class="testimonials">
+            <h2>Reseñas de Nuestros Clientes</h2>
+            <div class="testimonial active">
+                <p>"Excelente servicio y productos de calidad. ¡Recomiendo Rodamientos Integral!" - Juan Pérez</p>
+            </div>
+            <div class="testimonial">
+                <p>"Los mejores repuestos para mi tractor. Siempre vuelvo por más." - María López</p>
+            </div>
+            <div class="testimonial">
+                <p>"Gran variedad y atención personalizada. Muy satisfecho." - Carlos González</p>
+            </div>
+            <button id="prevBtn" onclick="showPreviousTestimonial()">Anterior</button>
+            <button id="nextBtn" onclick="showNextTestimonial()">Siguiente</button>
+        </section>
+
+        <section id="formulario" class="contact-forms">
+            <h2>Formulario de Contacto</h2>
+            <form id="contactForm" method="POST">
+                <input type="text" id="name" placeholder="Nombre" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <textarea id="message" placeholder="Mensaje" rows="5" required></textarea>
+                <button type="submit">Enviar</button>
+                <div class="success-message" id="successMessage">¡Mensaje enviado con éxito!</div>
+            </form>
+        </section>
+
+        <section>
+            <h2 id="contacto" class="contacto">Donde contactarnos</h2>
+            <div class="contactos-container">
+                <div class="contactos">
+                    <a href="https://maps.app.goo.gl/eQp2re1nWwRvf3hG7" class="contacto-enlace">
+                        <img src="imagenes/ubic3.jpg" alt="Ubicación">
+                        <span>Ubicación</span>
+                    </a>
+                </div>
+                <div class="contacto-item">
+                    <a href="https://wa.link/itv5w4" class="contacto-enlace">
+                        <img src="imagenes/whatsaap.jpg" alt="Whatsapp">
+                        <span>Whatsapp</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    <footer>
+        <p>&copy; 2024 Rodamientos Integral. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // desplazamiento para que sea suave.
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+         // se agrego botones para poder cambiar la reseña.
+         let currentTestimonialIndex = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+
+        function showTestimonial(index) {
+            testimonials.forEach((testimonial, i) => {
+                testimonial.classList.toggle('active', i === index);
+            });
+        }
+
+        function showPreviousTestimonial() {
+            currentTestimonialIndex = (currentTestimonialIndex > 0) ? currentTestimonialIndex - 1 : testimonials.length - 1;
+            showTestimonial(currentTestimonialIndex);
+        }
+
+        function showNextTestimonial() {
+            currentTestimonialIndex = (currentTestimonialIndex < testimonials.length - 1) ? currentTestimonialIndex + 1 : 0;
+            showTestimonial(currentTestimonialIndex);
+        }
+
+        // Filtro para poder buscar los productos.
+        function filterTable() {
+            const input = document.getElementById('search');
+            const filter = input.value.toLowerCase();
+            const table = document.getElementById('productTable');
+            const trs = table.getElementsByTagName('tr');
+
+            for (let i = 1; i < trs.length; i++) {
+                const tds = trs[i].getElementsByTagName('td');
+                let showRow = false;
+
+                for (let j = 0; j < tds.length; j++) {
+                    if (tds[j].textContent.toLowerCase().includes(filter)) {
+                        showRow = true;
+                        break;
+                    }
+                }
+                trs[i].style.display = showRow ? '' : 'none';
+            }
+        }
+
+        // Acomodar los productos por precio.
+        function sortTable() {
+            const table = document.getElementById("productTable");
+            const rows = Array.from(table.rows).slice(1); 
+            rows.sort((a, b) => {
+                const priceA = parseFloat(a.cells[2].textContent.replace(/\$/g, '').replace(/\./g, '').trim());
+                const priceB = parseFloat(b.cells[2].textContent.replace(/\$/g, '').replace(/\./g, '').trim());
+                return priceA - priceB;
+            });
+
+            rows.forEach(row => table.appendChild(row)); 
+        }
+
+         // Manejo de envío de formulario
+         document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const successMessage = document.getElementById('successMessage');
+
+            if (!name || !email || !message) {
+                alert("Por favor, complete todos los campos.");
+            } else {
+                successMessage.style.display = 'block'; 
+                this.reset(); 
+            }
+        });
+
+         // Efecto de aparición al desplazarse
+         const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Botón "Volver Arriba"
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        window.onscroll = function() {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollTopBtn.style.display = "block";
+            } else {
+                scrollTopBtn.style.display = "none";
+            }
+        };
+
+        scrollTopBtn.onclick = function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        };
+
+    </script>
+
+</body>
+</html>
+
+
